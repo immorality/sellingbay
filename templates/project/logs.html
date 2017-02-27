@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+
+
+<html>
+<head>
+    <title>sellingbay</title>
+</head>
+<body bgcolor=#6b8e23>
+<div style="text-align: center;">
+    {% for log in logs %}
+    <br />
+        {% for l in log %}
+           {{l}}
+        {% endfor %}
+    {% endfor %}
+</table>
+</div>
+</body>
+</html>

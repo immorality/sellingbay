@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+
+
+<html>
+<head>
+    <title>sellingbay</title>
+</head>
+<body bgcolor=#6b8e23>
+
+<a href="/project/logs">Logs</a>
+<center>
+<div>
+     <form method="post" enctype="multipart/form-data", action="/project/upload">
+         {% csrf_token %}
+         File CSV: <input type="file" name="filecsv">
+         <input type="submit", value="Upload">
+    </form>
+</div>
+
+<br /><br>
+
+<div style="text-align: center;">
+<table>
+    <caption>All rows</caption>
+        <tr>
+            <th>ID</th>
+            <th>Index</th>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Price</th>
+        </tr>
+    {% for n in new %}
+        <tr>
+            <td>{{n.id}}</td>
+            <td>{{n.index}}</td>
+            <td>{{n.description}}</td>
+            <td>{{n.amount}}</td>
+            <td>{{n.price}}</td>
+        </tr>
+    {% endfor %}
+</table>
+</div>
+</body>
+</html>
